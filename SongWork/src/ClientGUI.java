@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.List;
 
 public class ClientGUI extends JFrame {
     private JTextField jtf = new JTextField();
@@ -68,10 +67,10 @@ public class ClientGUI extends JFrame {
                 jta.append(song.getTitle() + " - " + song.getArtist() + " (" + song.getLength() + "s)\n");
             }
 
-
-
-            // Play the playlist
-            client.playPlaylist();
+            if (playlist != null) {
+                // Play the playlist
+                playlist.play();
+            }
         }
     }
 }

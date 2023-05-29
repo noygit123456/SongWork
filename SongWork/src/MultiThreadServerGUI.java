@@ -1,9 +1,7 @@
-import java.io.*;
 import java.net.*;
 import java.util.*;
 import java.awt.*;
 import javax.swing.*;
-import java.util.List;
 
 public class MultiThreadServerGUI extends JFrame {
 
@@ -41,7 +39,7 @@ public class MultiThreadServerGUI extends JFrame {
             jta.append("Client " + clientNo + "'s IP Address is " + inetAddress.getHostAddress() + "\n");
 
             // Create a new task for the connection
-            Thread task = new Thread(new HandleAClient(socket, playlist));
+            Thread task = new HandleAClient(socket, playlist);
 
             task.start();
             clientNo++;

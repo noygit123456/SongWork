@@ -1,9 +1,6 @@
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.Semaphore;
+import java.io.*;
+import java.util.*;
+import java.util.concurrent.*;
 
 public class Playlist implements Iterable<Song>, Serializable {
     private List<Song> songs ;

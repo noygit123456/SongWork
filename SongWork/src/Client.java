@@ -1,9 +1,5 @@
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
+import java.net.*;
 
 class Client {
     private Socket socket;
@@ -29,7 +25,6 @@ class Client {
         }
     }
 
-
     public Song readFromServer() {
         try {
             Object response = fromServer.readObject();
@@ -43,7 +38,6 @@ class Client {
         }
         return null;
     }
-
 
     public Playlist getPlaylist() {
         try {
@@ -61,13 +55,5 @@ class Client {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public void playPlaylist() {
-        try {
-            toServer.writeObject("PLAY_PLAYLIST");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
